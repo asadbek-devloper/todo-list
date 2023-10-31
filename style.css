@@ -4,9 +4,15 @@
   box-sizing: border-box;
 }
 
+body {
+  overflow-x: hidden;
+
+  background-color: rgba(0, 0, 0, 0.689);
+}
+
 .todo-container {
   border-radius: 15px 30px;
-  background: #151515da;
+  background: darkgreen;
   width: 500px;
   margin: 100px auto;
   padding: 20px 30px;
