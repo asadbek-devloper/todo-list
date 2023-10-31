@@ -104,6 +104,11 @@ body {
   color: grey;
 }
 
+.isChecked {
+  text-decoration: line-through;
+  background-color: darkgray;
+  color: black;
+}
 .hidden {
   display: none;
 }

@@ -1,10 +1,11 @@
 "use stric";
 
-const data = [];
+let data = [];
 
 // element
 const list = document?.querySelector(".list");
 const form = document?.querySelector(".form");
+let listItme;
 // buttons
 const plusBtn = document?.querySelector(".plus-btn");
 const createBtn = document?.querySelector(".button");
@@ -25,7 +26,9 @@ const createElement = () => {
     data.forEach((d) => {
       list.insertAdjacentHTML(
         "afterbegin",
-        `<li class="list-item" dataset=${d?.id}>
+        `<li class="list-item ${d.isChecked ? "isChecked" : ""} " data-set=${
+          d?.id
+        }>
         <div>
         ${
           d.isChecked
@@ -56,7 +59,9 @@ const createElement = () => {
 </span>`
         }
           
-            <span class="name">${d?.listName}</span>
+            <div class="name ${d.isChecked ? "isChecked" : ""}">${
+          d?.listName
+        }</div>
         </div>
         <div class="createdAt"><span>${d?.createdAt}</span></div>
       </li>`
@@ -83,4 +88,27 @@ createBtn?.addEventListener("click", (e) => {
   input.value = "";
   form.classList.add("hidden");
   plusBtn.classList.remove("hidden");
+});
+
+list.addEventListener("click", () => {
+  listItme = document.querySelectorAll(".list-item");
+  listItme?.forEach((itme) => {
+    itme?.addEventListener("click", (e) => {
+      const dataset = +e.currentTarget.dataset.set;
+      data = data.map((d) => {
+        if (d.id === dataset) {
+          const newObj = {
+            id: d.id,
+            listName: d.listName,
+            createdAt: d.createdAt,
+            isChecked: true,
+          };
+          return newObj;
+        } else {
+          return d;
+        }
+      });
+      createElement();
+    });
+  });
 });
