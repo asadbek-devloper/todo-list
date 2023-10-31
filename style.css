@@ -3,9 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-body {
-  background: #151515da;
-}
+
 .todo-container {
   border-radius: 15px 30px;
   background: #151515da;
@@ -32,7 +30,6 @@ body {
   padding: 8px 10px;
   margin: 14px 0;
   border-radius: 5px 20px;
-  cursor: pointer;
 }
 
 .list-item > div {
@@ -51,6 +48,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.circle {
+  cursor: pointer;
 }
 
 .createdAt {
@@ -106,8 +107,35 @@ body {
 
 .isChecked {
   text-decoration: line-through;
-  background-color: darkgray;
-  color: black;
+  background-color: rgb(0, 107, 34);
+  color: rgb(169, 1, 1) !important;
+}
+
+.edit-s {
+  color: orange;
+  background-color: rgba(0, 0, 0, 0.708);
+  padding: 4px 7px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.check {
+  background-color: rgba(0, 0, 0, 0.735);
+  color: white;
+  padding: 4px 7px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.del-s {
+  color: red;
+  background-color: rgba(0, 0, 0, 0.708);
+  padding: 4px 7px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.circle:hover {
+  background-color: red;
 }
 .hidden {
   display: none;
